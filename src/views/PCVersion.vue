@@ -1,3 +1,4 @@
+<!-- moyi and wzp -->
 <template>
   <div class="homePage">
     <el-header class="head">
@@ -54,6 +55,8 @@
         天气：{{ weatherData.weather }}
         风向：{{ weatherData.winddirection }}
         风速：{{ weatherData.windpower }}
+        <br>
+        <el-select-v2 :options="cities" v-model="cityCode" filterable placeholder="请选择城市" />
 
       </el-aside>
 
@@ -65,7 +68,7 @@
           当前是下雨2小时预计折线图 - 【正在开发】
         </div>
         <div class="futureForecast">
-          当前是未来15天天气预测
+          当前是未来5天天气预测
           <el-table :data="tableData" :show-header="false" class="el-table">
             <el-table-column prop="time" label="Date"/>
             <el-table-column prop="weather" label="Weather"/>
@@ -74,6 +77,9 @@
             <el-table-column prop="weatherIcon" label="Weather Icon"/>
             <el-table-column prop="temperature" label="Temperature"/>
           </el-table>
+          <div class="moreWeather">
+            <el-button type="primary" @click="moreWeather">查看未来15日天气</el-button>
+          </div>
         </div>
         <div class="hourLineChart">
           当前是预计24小时天气（精准到小时） - 【正在开发】
@@ -123,8 +129,11 @@
 </template>
 
 <script setup lang="ts">
-import {onMounted, ref} from "vue";
+import {onMounted, ref, computed} from "vue";
 import {More, Plus} from "@element-plus/icons-vue";
+import { ElSelectV2 } from 'element-plus'
+
+import "./css/PCVersion.css";
 
 const tableData = [
   {
@@ -161,7 +170,6 @@ const tableData = [
     temperature: '14-21'
   }
 ];
-
 // 位置信息
 let locationData = ref({
   status: '',
@@ -191,65 +199,68 @@ let weatherData = ref({
 const apiKey = import.meta.env.VITE_AMAP_API_KEY;
 
 const getLocation = async () => {
-  try {
-    const response = await fetch(`https://restapi.amap.com/v3/ip?key=${apiKey}`);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const data = await response.json();
-    locationData.value = {
-      status: data.status || 'NULL',
-      info: data.info || 'NULL',
-      infocode: data.infocode || 'NULL',
-      province: data.province || 'XX省',
-      city: data.city || 'XX市',
-      adcode: data.adcode || 'NULL',
-      rectangle: data.rectangle || 'NULL'
-    };
-
-    console.log(locationData.value); // 在此打印 locationData 确认 adcode
-  } catch (error) {
-    console.error('Error:',);
+  const response = await fetch(`https://restapi.amap.com/v3/ip?key=${apiKey}`);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
   }
-};
+  const data = await response.json();
+  locationData.value = {
+    status: data.status || '获取返回状态失败',
+    info: data.info || '获取信息失败',
+    infocode: data.infocode || 'NULL',
+    province: data.province || 'XX省',
+    city: data.city || 'XX市',
+    adcode: data.adcode || 'NULL',
+    rectangle: data.rectangle || 'NULL'
+  };
 
+  console.log(locationData.value); // 在此打印 locationData 确认 adcode
+};
 
 const getWeather = async (adcode: string) => {
   if (!adcode) {
     console.error('adcode is empty');
     return;
   }
-
-  try {
-    const response = await fetch(`https://restapi.amap.com/v3/weather/weatherInfo?city=${adcode}&key=${apiKey}`);
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-    const dataJson = await response.json();
-    const data = dataJson.lives[0];
-    weatherData.value = {
-      adcode: data.status || 'NULL',
-      city: data.city || 'XX市',
-      humidity: data.humidity || 'NULL',
-      humidity_float: data.humidity_float || 'NULL',
-      province: data.province || 'XX省',
-      reporttime: data.reporttime || 'NULL',
-      temperature: data.temperature || 'NULL',
-      temperature_float: data.temperature_float || 'NULL',
-      weather: data.weather || 'NULL',
-      winddirection: data.winddirection || 'NULL',
-      windpower: data.windpower || 'NULL',
-    }
-  } catch (error) {
-    console.error('Error:',);
+  const response = await fetch(`https://restapi.amap.com/v3/weather/weatherInfo?city=${adcode}&key=${apiKey}`);
+  if (!response.ok) {
+    throw new Error(`HTTP error! status: ${response.status}`);
   }
+  const dataJson = await response.json();
+  const data = dataJson.lives[0];
+  weatherData.value = {
+    adcode: data.status || 'NULL',
+    city: data.city || 'XX市',
+    humidity: data.humidity || 'NULL',
+    humidity_float: data.humidity_float || 'NULL',
+    province: data.province || 'XX省',
+    reporttime: data.reporttime || 'NULL',
+    temperature: data.temperature || 'NULL',
+    temperature_float: data.temperature_float || 'NULL',
+    weather: data.weather || 'NULL',
+    winddirection: data.winddirection || 'NULL',
+    windpower: data.windpower || 'NULL',
+  }
+
 };
 
+const moreWeather = async () => {
+  console.log(123)
+}
+const cities = ref<Record<string, string>[]>([]);
+const cityCode = ref<string>("");
 onMounted(async () => {
   // 先让getLocation执行
   await getLocation();
   // 获取天气情况（参数是地区编号） -> 安徽省 宿州市
   getWeather(locationData.value.adcode);
+  const response = await fetch("/citycode.json");
+  const data = await response.json();
+  data.map((e) => {
+    if (e.city_code){
+      cities.value.push({value: e.city_code, label: e.city_name});
+    }
+  });
 });
 
 
@@ -265,120 +276,5 @@ const toggleDivs = () => {
 
 
 <style scoped>
-* {
-  margin: 0;
-  padding: 0;
-  color: #fff;
-}
 
-.homePage {
-  background-color: #7f8a9c;
-}
-
-.head {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  margin-right: 20px;
-}
-
-.headIcon {
-  display: flex;
-}
-
-.headIconSvg {
-  margin: 0 10px;
-}
-
-.container {
-  height: calc(100vh - 60px);
-}
-
-.weatherPage {
-  width: 40% !important;
-  height: 100%;
-}
-
-.dataPage {
-  width: 60% !important;
-  height: 100%;
-}
-
-.dataPage > div:not(.dataPageAbout, .recommend) {
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 10px;
-  margin: 0 60px 20px 20px;
-}
-
-.dataPageAbout > div {
-  margin: 0 60px 0 0;
-  display: flex;
-}
-
-.dataPageAbout > div > div {
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  width: 33.33%;
-  padding: 10px;
-  margin: 0 0 20px 20px;
-}
-
-.recommend > div {
-  margin: 0 60px 0 0;
-  display: flex;
-}
-
-.recommend > div > div {
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  width: 33.33%;
-  padding: 10px;
-  margin: 0 0 20px 20px;
-}
-
-.el-table {
-  margin: 10px 0 0 0;
-  --el-table-border-color: none;
-  --el-table-bg-color: transparent;
-  --el-table-tr-bg-color: transparent;
-  --el-table-text-color: #fff;
-  --el-table-row-hover-bg-color: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-}
-
-.el-table__row {
-  border-radius: 10px;
-}
-
-.weatherConditions {
-  margin: 20% 0 0 10%;
-}
-
-.weatherConditions > .temperature {
-  font-size: 150px;
-  margin: 0;
-}
-
-.weatherConditions > .maxAndMin > span {
-  margin: 0 10px 0 0;
-}
-
-.fillet {
-  display: flex;
-}
-
-.weatherConditions > .fillet > div {
-  font-size: 15px;
-  width: 27%;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 10px;
-  margin: 0 10px 0 0;
-}
-
-.weatherConditions > .fillet > .airQuality {
-  width: 15%;
-}
 </style>

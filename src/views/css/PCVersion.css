@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+/*    color: #fff;*/
+}
+
+.homePage {
+    background-color: #7f8a9c;
+}
+
+.head {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+
+.headIcon {
+    display: flex;
+}
+
+.headIconSvg {
+    margin: 0 10px;
+}
+
+.container {
+    height: calc(100vh - 60px);
+}
+
+.weatherPage {
+    width: 40% !important;
+    height: 100%;
+}
+
+.dataPage {
+    width: 60% !important;
+    height: 100%;
+}
+
+/*noinspection ALL*/
+.dataPage > div:not(.dataPageAbout, .recommend) {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin: 0 60px 20px 20px;
+}
+
+.dataPageAbout > div {
+    margin: 0 60px 0 0;
+    display: flex;
+}
+
+.dataPageAbout > div > div {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 33.33%;
+    padding: 10px;
+    margin: 0 0 20px 20px;
+}
+
+.recommend > div {
+    margin: 0 60px 0 0;
+    display: flex;
+}
+
+.recommend > div > div {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    width: 33.33%;
+    padding: 10px;
+    margin: 0 0 20px 20px;
+}
+
+.el-table {
+    margin: 10px 0 0 0;
+    --el-table-border-color: rgba(255, 255, 255, 0.1);
+    --el-table-bg-color: transparent;
+    --el-table-tr-bg-color: transparent;
+    --el-table-text-color: #fff;
+    --el-table-row-hover-bg-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.weatherConditions {
+    margin: 20% 0 0 10%;
+}
+
+.weatherConditions > .temperature {
+    font-size: 150px;
+    margin: 0;
+}
+
+.weatherConditions > .maxAndMin > span {
+    margin: 0 10px 0 0;
+}
+
+.fillet {
+    display: flex;
+}
+
+.weatherConditions > .fillet > div {
+    font-size: 15px;
+    width: 27%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin: 0 10px 0 0;
+}
+
+.weatherConditions > .fillet > .airQuality {
+    width: 15%;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+}
+.table > .table-line:last-child {
+    margin-bottom: 0;
+}
+.table-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+.table-line:hover {
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);;
+}
+.table-line > div {
+    width: 100%;
+    margin: 0 12px;
+    font-size: 14px;
+}
+
+.futureForecast {
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px;
+    margin: 0 0 10px 0;
+}
+
+.moreWeather {
+    margin-top: 5px;
+}

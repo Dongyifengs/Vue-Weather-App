@@ -6,6 +6,11 @@ const routes: RouteRecordRaw[] = [
         name: "Home",
         component: import("../views/PCVersion.vue"),
         path: "/"
+    },
+    {
+        name: "TestAPI",
+        component: import("../views/TestAPI.vue"),
+        path: "/TestAPI"
     }
 ];
 const route = createRouter({routes, history: createWebHashHistory()});

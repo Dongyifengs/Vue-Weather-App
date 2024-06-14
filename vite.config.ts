@@ -26,4 +26,13 @@ export default defineConfig({
             }
         ),
     ],
+    server: {
+        proxy: {
+            '/api': {
+                target: 'http://t.weather.sojson.com',
+                changeOrigin: true,
+                rewrite: (path) => path.replace(/^\/api/, '')
+            }
+        }
+    }
 })
