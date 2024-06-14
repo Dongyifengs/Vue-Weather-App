@@ -24,39 +24,39 @@
             <span class="city"> {{ locationData.city }} </span>
           </div>
           <div class="temperature">
-            <span>{{ weatherData.temperature }}°</span>
+            <span>{{ weather.temperature }}°</span>
           </div>
           <div class="maxAndMin">
-            <span>{{ weatherData.weather }}</span>
-            <span>最高22°</span>
-            <span>最低16°</span>
+            <span>{{ weather.weather }}</span>
+            <span>最高{{weather.high}}°C</span>
+            <span>最低{{weather.low}}°C</span>
           </div>
           <div class="fillet">
             <div class="rainPopUpWindow">
               14公里外正在下雨
             </div>
             <div class="airQuality">
-              空气优 26
+              {{weather.aqiLevel}} {{weather.aqi}}
             </div>
           </div>
         </div>
         <div>这里为测试窗口 后续开发完毕删除即可</div>
         <el-button type="primary" @click="toggleDivs">隐藏/显示</el-button>
-        <span>{{ locationData }}</span>
+<!--        <span>{{ locationData }}</span>-->
         <div>天气数据</div>
-        地区编号：{{ weatherData.adcode }}
-        市区：{{ weatherData.city }}
-        空气湿度：{{ weatherData.humidity }}
-        空气湿度小数点：{{ weatherData.humidity_float }}
-        省：{{ weatherData.province }}
-        更新时间：{{ weatherData.reporttime }}
-        实时温度：{{ weatherData.temperature }}
-        实时温度小数点：{{ weatherData.temperature_float }}
-        天气：{{ weatherData.weather }}
-        风向：{{ weatherData.winddirection }}
-        风速：{{ weatherData.windpower }}
+        地区编号：{{ locationData.adcode }}
+        市区：{{ locationData.city }}
+        空气湿度：{{ weather.humidity }}
+<!--        空气湿度小数点：{{ weatherData.humidity_float }}-->
+        省：{{ locationData.province }}
+        更新时间：{{ weather.reportTime }}
+        实时温度：{{ weather.temperature }}
+<!--        实时温度小数点：{{ weatherData.temperature_float }}-->
+        天气：{{ weather.weather }}
+        风向：{{ weather.windDirection }}
+        风速：{{ weather.windPower }}
         <br>
-        <el-select-v2 :options="cities" v-model="cityCode" filterable placeholder="请选择城市" />
+        <el-select-v2 :options="cities" v-model="cityCode" filterable placeholder="请选择城市" @change="changeCity" style="width: 200px" />
 
       </el-aside>
 
@@ -70,12 +70,12 @@
         <div class="futureForecast">
           当前是未来5天天气预测
           <el-table :data="tableData" :show-header="false" class="el-table">
-            <el-table-column prop="time" label="Date"/>
-            <el-table-column prop="weather" label="Weather"/>
-            <el-table-column prop="windDirection" label="Wind Direction"/>
-            <el-table-column prop="tag" label="Tag"/>
-            <el-table-column prop="weatherIcon" label="Weather Icon"/>
-            <el-table-column prop="temperature" label="Temperature"/>
+            <el-table-column prop="ymd" label="Date" width="120px"/>
+            <el-table-column prop="type" label="Weather"/>
+            <el-table-column prop="fx" label="Wind Direction"/>
+            <el-table-column prop="aqi" label="Tag"/>
+            <el-table-column prop="type" label="Weather Icon"/>
+            <el-table-column prop="high" label="Temperature"/>
           </el-table>
           <div class="moreWeather">
             <el-button type="primary" @click="moreWeather">查看未来15日天气</el-button>
@@ -129,48 +129,15 @@
 </template>
 
 <script setup lang="ts">
-import {onMounted, ref, computed} from "vue";
+import {onMounted, ref} from "vue";
 import {More, Plus} from "@element-plus/icons-vue";
 import { ElSelectV2 } from 'element-plus'
 
-import "./css/PCVersion.css";
+import "./index.css";
+import {CurrentWeatherData, ForeCaseData, getAqiLevel} from "../../entities/WeatherData.ts";
+import {getCities, getWeather} from "../../api";
 
-const tableData = [
-  {
-    time: '今天',
-    weather: '多云',
-    windDirection: '东北风二级',
-    tag: '良',
-    weatherIcon: '多云图标',
-    temperature: '18-25'
-  },
-  {
-    time: '明天',
-    weather: '小雨',
-    windDirection: '西南风三级',
-    tag: '轻度污染',
-    weatherIcon: '小雨图标',
-    temperature: '15-20'
-  },
-  {time: '后天', weather: '晴', windDirection: '东风一级', tag: '优', weatherIcon: '晴天图标', temperature: '17-23'},
-  {
-    time: '大后天',
-    weather: '雷阵雨',
-    windDirection: '南风四级',
-    tag: '中度污染',
-    weatherIcon: '雷阵雨图标',
-    temperature: '20-24'
-  },
-  {
-    time: '周六',
-    weather: '阴转小雨',
-    windDirection: '西北风二级',
-    tag: '良',
-    weatherIcon: '阴转小雨图标',
-    temperature: '14-21'
-  }
-];
-// 位置信息
+const tableData = ref<ForeCaseData[]>([]);
 let locationData = ref({
   status: '',
   info: '',
@@ -182,7 +149,8 @@ let locationData = ref({
 });
 
 // 天气信息
-let weatherData = ref({
+const weather = ref<CurrentWeatherData>({humidity: 0, reportTime: "", temperature: 0, weather: "", windDirection: "", windPower: 0, high: 0, low: 0, aqi: 0, aqiLevel: "优"});
+/*let weatherData = ref({
   adcode: "",
   city: "",
   humidity: "",
@@ -194,11 +162,9 @@ let weatherData = ref({
   weather: "",
   winddirection: "",
   windpower: ""
-});
+});*/
 
-const apiKey = import.meta.env.VITE_AMAP_API_KEY;
-
-const getLocation = async () => {
+/*const getLocation = async () => {
   const response = await fetch(`https://restapi.amap.com/v3/ip?key=${apiKey}`);
   if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
@@ -215,9 +181,9 @@ const getLocation = async () => {
   };
 
   console.log(locationData.value); // 在此打印 locationData 确认 adcode
-};
+};*/
 
-const getWeather = async (adcode: string) => {
+/*const getWeather = async (adcode: string) => {
   if (!adcode) {
     console.error('adcode is empty');
     return;
@@ -242,25 +208,17 @@ const getWeather = async (adcode: string) => {
     windpower: data.windpower || 'NULL',
   }
 
-};
+};*/
 
 const moreWeather = async () => {
   console.log(123)
 }
-const cities = ref<Record<string, string>[]>([]);
-const cityCode = ref<string>("");
+const cities = ref<{value: number, label: string}[]>([]);
+const cityCode = ref<number>();
 onMounted(async () => {
-  // 先让getLocation执行
-  await getLocation();
-  // 获取天气情况（参数是地区编号） -> 安徽省 宿州市
-  getWeather(locationData.value.adcode);
-  const response = await fetch("/citycode.json");
-  const data = await response.json();
-  data.map((e) => {
-    if (e.city_code){
-      cities.value.push({value: e.city_code, label: e.city_name});
-    }
-  });
+  for (let data of (await getCities()).data) {
+    cities.value.push({value: data.code, label: data.name});
+  }
 });
 
 
@@ -272,6 +230,33 @@ const toggleDivs = () => {
     rainChartDiv.style.display = rainChartDiv.style.display === 'none' ? 'block' : 'none';
   }
 };
+const fetchWeatherData = async () => {
+  if (cityCode.value){
+    const weatherResponse = await getWeather(cityCode.value);
+    const responseData = weatherResponse.data;
+    const todayForecastData = responseData.data.forecast[0];
+    weather.value.reportTime = responseData.time;
+    weather.value.weather = todayForecastData.type;
+    weather.value.humidity = Number.parseInt(responseData.data.shidu.replace("%", ""));
+    weather.value.temperature = Number.parseFloat(responseData.data.wendu);
+    weather.value.windDirection = todayForecastData.fx;
+    weather.value.windPower = Number.parseFloat(todayForecastData.fl);
+    weather.value.high = Number.parseFloat(todayForecastData.high.split(" ")[1].replace("℃", ""));
+    weather.value.low = Number.parseFloat(todayForecastData.low.split(" ")[1].replace("℃", ""));
+    const aqi = Number.parseFloat(todayForecastData.aqi);
+    weather.value.aqi = aqi;
+    weather.value.aqiLevel = getAqiLevel(aqi);
+    while(tableData.value.length !== 0) {
+      tableData.value.pop();
+    }
+    for (let forecastElement of responseData.data.forecast.splice(0, 5)) {
+      tableData.value.push(forecastElement);
+    }
+  }
+}
+const changeCity = () => {
+  fetchWeatherData();
+}
 </script>
 
 
