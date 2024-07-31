@@ -1,0 +1,962 @@
+{
+  "current": {
+    "feelsLike": {
+      "unit": "℃",
+      "value": "36"
+    },
+    "humidity": {
+      "unit": "%",
+      "value": "70"
+    },
+    "pressure": {
+      "unit": "hPa",
+      "value": "997"
+    },
+    "pubTime": "2024-07-31T19:47:18+08:00",
+    "temperature": {
+      "unit": "℃",
+      "value": "31"
+    },
+    "uvIndex": "0",
+    "visibility": {
+      "unit": "km",
+      "value": ""
+    },
+    "weather": "1",
+    "wind": {
+      "direction": {
+        "unit": "°",
+        "value": "227.0"
+      },
+      "speed": {
+        "unit": "km/h",
+        "value": "9.0"
+      }
+    }
+  },
+  "forecastDaily": {
+    "aqi": {
+      "brandInfo": {
+        "brands": [
+          {
+            "brandId": "caiyun",
+            "logo": "http://f5.market.mi-img.com/download/MiSafe/07fa34263d698a7a9a8050dde6a7c63f8f243dbf3/a.webp",
+            "names": {
+              "zh_TW": "彩雲天氣",
+              "en_US": "彩云天气",
+              "zh_CN": "彩云天气"
+            },
+            "url": ""
+          }
+        ]
+      },
+      "pubTime": "2024-07-31T00:00:00+08:00",
+      "status": 0,
+      "value": [
+        31,
+        49,
+        60,
+        78,
+        79,
+        76,
+        71,
+        67,
+        63,
+        65,
+        66,
+        67,
+        48,
+        55,
+        60
+      ]
+    },
+    "moonPhase": null,
+    "precipitationProbability": {
+      "status": 0,
+      "value": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "pubTime": "2024-07-31T19:00:00+08:00",
+    "status": 0,
+    "sunRiseSet": {
+      "status": 0,
+      "value": [
+        {
+          "from": "2024-07-31T05:23:00+08:00",
+          "to": "2024-07-31T19:13:00+08:00"
+        },
+        {
+          "from": "2024-08-01T05:23:00+08:00",
+          "to": "2024-08-01T19:13:00+08:00"
+        },
+        {
+          "from": "2024-08-02T05:24:00+08:00",
+          "to": "2024-08-02T19:12:00+08:00"
+        },
+        {
+          "from": "2024-08-03T05:25:00+08:00",
+          "to": "2024-08-03T19:11:00+08:00"
+        },
+        {
+          "from": "2024-08-04T05:25:00+08:00",
+          "to": "2024-08-04T19:10:00+08:00"
+        },
+        {
+          "from": "2024-08-05T05:26:00+08:00",
+          "to": "2024-08-05T19:09:00+08:00"
+        },
+        {
+          "from": "2024-08-06T05:27:00+08:00",
+          "to": "2024-08-06T19:08:00+08:00"
+        },
+        {
+          "from": "2024-08-07T05:27:00+08:00",
+          "to": "2024-08-07T19:07:00+08:00"
+        },
+        {
+          "from": "2024-08-08T05:28:00+08:00",
+          "to": "2024-08-08T19:06:00+08:00"
+        },
+        {
+          "from": "2024-08-09T05:29:00+08:00",
+          "to": "2024-08-09T19:05:00+08:00"
+        },
+        {
+          "from": "2024-08-10T05:30:00+08:00",
+          "to": "2024-08-10T19:04:00+08:00"
+        },
+        {
+          "from": "2024-08-11T05:30:00+08:00",
+          "to": "2024-08-11T19:03:00+08:00"
+        },
+        {
+          "from": "2024-08-12T05:31:00+08:00",
+          "to": "2024-08-12T19:02:00+08:00"
+        },
+        {
+          "from": "2024-08-13T05:32:00+08:00",
+          "to": "2024-08-13T19:01:00+08:00"
+        },
+        {
+          "from": "2024-08-14T05:32:00+08:00",
+          "to": "2024-08-14T19:00:00+08:00"
+        }
+      ]
+    },
+    "temperature": {
+      "status": 0,
+      "unit": "℃",
+      "value": [
+        {
+          "from": "35",
+          "to": "27"
+        },
+        {
+          "from": "34",
+          "to": "26"
+        },
+        {
+          "from": "32",
+          "to": "27"
+        },
+        {
+          "from": "36",
+          "to": "27"
+        },
+        {
+          "from": "36",
+          "to": "26"
+        },
+        {
+          "from": "36",
+          "to": "26"
+        },
+        {
+          "from": "37",
+          "to": "26"
+        },
+        {
+          "from": "35",
+          "to": "26"
+        },
+        {
+          "from": "33",
+          "to": "25"
+        },
+        {
+          "from": "33",
+          "to": "26"
+        },
+        {
+          "from": "28",
+          "to": "22"
+        },
+        {
+          "from": "29",
+          "to": "23"
+        },
+        {
+          "from": "30",
+          "to": "24"
+        },
+        {
+          "from": "32",
+          "to": "24"
+        },
+        {
+          "from": "31",
+          "to": "23"
+        }
+      ]
+    },
+    "weather": {
+      "status": 0,
+      "value": [
+        {
+          "from": "1",
+          "to": "2"
+        },
+        {
+          "from": "8",
+          "to": "1"
+        },
+        {
+          "from": "1",
+          "to": "1"
+        },
+        {
+          "from": "0",
+          "to": "1"
+        },
+        {
+          "from": "0",
+          "to": "0"
+        },
+        {
+          "from": "0",
+          "to": "0"
+        },
+        {
+          "from": "0",
+          "to": "0"
+        },
+        {
+          "from": "1",
+          "to": "2"
+        },
+        {
+          "from": "2",
+          "to": "2"
+        },
+        {
+          "from": "2",
+          "to": "2"
+        },
+        {
+          "from": "7",
+          "to": "7"
+        },
+        {
+          "from": "7",
+          "to": "7"
+        },
+        {
+          "from": "7",
+          "to": "7"
+        },
+        {
+          "from": "7",
+          "to": "1"
+        },
+        {
+          "from": "7",
+          "to": "1"
+        }
+      ]
+    },
+    "wind": {
+      "direction": {
+        "status": 0,
+        "unit": "°",
+        "value": [
+          {
+            "from": "227.0",
+            "to": "227.0"
+          },
+          {
+            "from": "216.47",
+            "to": "244.44"
+          },
+          {
+            "from": "178.79",
+            "to": "204.12"
+          },
+          {
+            "from": "152.25",
+            "to": "223.51"
+          },
+          {
+            "from": "218.24",
+            "to": "228.39"
+          },
+          {
+            "from": "221.39",
+            "to": "213.26"
+          },
+          {
+            "from": "200.87",
+            "to": "209.73"
+          },
+          {
+            "from": "169.89",
+            "to": "177.13"
+          },
+          {
+            "from": "198.77",
+            "to": "228.07"
+          },
+          {
+            "from": "264.09",
+            "to": "261.2"
+          },
+          {
+            "from": "239.91",
+            "to": "226.75"
+          },
+          {
+            "from": "305.91",
+            "to": "283.01"
+          },
+          {
+            "from": "37.35",
+            "to": "2.88"
+          },
+          {
+            "from": "76.52",
+            "to": "87.17"
+          },
+          {
+            "from": "96.6",
+            "to": "93.79"
+          }
+        ]
+      },
+      "speed": {
+        "status": 0,
+        "unit": "km/h",
+        "value": [
+          {
+            "from": "9.0",
+            "to": "9.0"
+          },
+          {
+            "from": "12.23",
+            "to": "22.57"
+          },
+          {
+            "from": "7.65",
+            "to": "10.82"
+          },
+          {
+            "from": "7.19",
+            "to": "12.1"
+          },
+          {
+            "from": "9.83",
+            "to": "17.85"
+          },
+          {
+            "from": "10.97",
+            "to": "16.64"
+          },
+          {
+            "from": "6.54",
+            "to": "13.38"
+          },
+          {
+            "from": "8.36",
+            "to": "12.71"
+          },
+          {
+            "from": "6.58",
+            "to": "13.06"
+          },
+          {
+            "from": "5.65",
+            "to": "12.37"
+          },
+          {
+            "from": "7.73",
+            "to": "10.41"
+          },
+          {
+            "from": "8.05",
+            "to": "8.97"
+          },
+          {
+            "from": "6.88",
+            "to": "7.1"
+          },
+          {
+            "from": "7.55",
+            "to": "11.08"
+          },
+          {
+            "from": "13.53",
+            "to": "15.47"
+          }
+        ]
+      }
+    }
+  },
+  "forecastHourly": {
+    "aqi": {
+      "brandInfo": {
+        "brands": [
+          {
+            "brandId": "caiyun",
+            "logo": "http://f5.market.mi-img.com/download/MiSafe/07fa34263d698a7a9a8050dde6a7c63f8f243dbf3/a.webp",
+            "names": {
+              "zh_TW": "彩雲天氣",
+              "en_US": "彩云天气",
+              "zh_CN": "彩云天气"
+            },
+            "url": ""
+          }
+        ]
+      },
+      "pubTime": "2024-07-31T20:00:00+08:00",
+      "status": 0,
+      "value": [
+        48,
+        41,
+        38,
+        42,
+        37,
+        34,
+        30,
+        37,
+        31,
+        32,
+        34,
+        35,
+        37,
+        38,
+        40,
+        42,
+        45,
+        48,
+        81,
+        82,
+        75,
+        83,
+        73
+      ]
+    },
+    "desc": "逐小时预报",
+    "status": 0,
+    "temperature": {
+      "pubTime": "2024-07-31T20:00:00+08:00",
+      "status": 0,
+      "unit": "",
+      "value": [
+        31,
+        32,
+        32,
+        33,
+        33,
+        33,
+        34,
+        29,
+        29,
+        29,
+        29,
+        28,
+        28,
+        29,
+        29,
+        29,
+        33,
+        33,
+        33,
+        30,
+        30,
+        29,
+        29
+      ]
+    },
+    "weather": {
+      "pubTime": "2024-07-31T20:00:00+08:00",
+      "status": 0,
+      "value": [
+        2,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "wind": {
+      "status": 0,
+      "value": [
+        {
+          "datetime": "2024-07-31T20:00:00.000+08:00",
+          "direction": "212.77",
+          "speed": "9.09"
+        },
+        {
+          "datetime": "2024-07-31T21:00:00.000+08:00",
+          "direction": "197.4",
+          "speed": "9.86"
+        },
+        {
+          "datetime": "2024-07-31T22:00:00.000+08:00",
+          "direction": "198.49",
+          "speed": "8.99"
+        },
+        {
+          "datetime": "2024-07-31T23:00:00.000+08:00",
+          "direction": "213.09",
+          "speed": "9.88"
+        },
+        {
+          "datetime": "2024-08-01T00:00:00.000+08:00",
+          "direction": "214.22",
+          "speed": "8.81"
+        },
+        {
+          "datetime": "2024-08-01T01:00:00.000+08:00",
+          "direction": "221.38",
+          "speed": "8.59"
+        },
+        {
+          "datetime": "2024-08-01T02:00:00.000+08:00",
+          "direction": "223.27",
+          "speed": "9.13"
+        },
+        {
+          "datetime": "2024-08-01T03:00:00.000+08:00",
+          "direction": "217.33",
+          "speed": "9.4"
+        },
+        {
+          "datetime": "2024-08-01T04:00:00.000+08:00",
+          "direction": "215.96",
+          "speed": "11.38"
+        },
+        {
+          "datetime": "2024-08-01T05:00:00.000+08:00",
+          "direction": "203.33",
+          "speed": "10.21"
+        },
+        {
+          "datetime": "2024-08-01T06:00:00.000+08:00",
+          "direction": "197.77",
+          "speed": "9.39"
+        },
+        {
+          "datetime": "2024-08-01T07:00:00.000+08:00",
+          "direction": "196.56",
+          "speed": "9.66"
+        },
+        {
+          "datetime": "2024-08-01T08:00:00.000+08:00",
+          "direction": "199.15",
+          "speed": "12.59"
+        },
+        {
+          "datetime": "2024-08-01T09:00:00.000+08:00",
+          "direction": "214.01",
+          "speed": "17.62"
+        },
+        {
+          "datetime": "2024-08-01T10:00:00.000+08:00",
+          "direction": "227.45",
+          "speed": "19.44"
+        },
+        {
+          "datetime": "2024-08-01T11:00:00.000+08:00",
+          "direction": "239.19",
+          "speed": "20.38"
+        },
+        {
+          "datetime": "2024-08-01T12:00:00.000+08:00",
+          "direction": "244.44",
+          "speed": "22.57"
+        },
+        {
+          "datetime": "2024-08-01T13:00:00.000+08:00",
+          "direction": "249.91",
+          "speed": "22.53"
+        },
+        {
+          "datetime": "2024-08-01T14:00:00.000+08:00",
+          "direction": "259.55",
+          "speed": "14.27"
+        },
+        {
+          "datetime": "2024-08-01T15:00:00.000+08:00",
+          "direction": "239.34",
+          "speed": "10.72"
+        },
+        {
+          "datetime": "2024-08-01T16:00:00.000+08:00",
+          "direction": "239.92",
+          "speed": "10.14"
+        },
+        {
+          "datetime": "2024-08-01T17:00:00.000+08:00",
+          "direction": "229.15",
+          "speed": "10.07"
+        },
+        {
+          "datetime": "2024-08-01T18:00:00.000+08:00",
+          "direction": "203.86",
+          "speed": "7.09"
+        }
+      ]
+    }
+  },
+  "indices": {
+    "indices": [
+      {
+        "type": "uvIndex",
+        "value": "5"
+      },
+      {
+        "type": "humidity",
+        "value": "70"
+      },
+      {
+        "type": "feelsLike",
+        "value": "36"
+      },
+      {
+        "type": "pressure",
+        "value": "997"
+      },
+      {
+        "type": "carWash",
+        "value": "1"
+      },
+      {
+        "type": "sports",
+        "value": "1"
+      }
+    ],
+    "pubTime": "",
+    "status": 0
+  },
+  "alerts": [],
+  "yesterday": {
+    "aqi": "",
+    "date": "2024-07-30T12:00:00+08:00",
+    "status": 0,
+    "sunRise": "2024-07-30T05:22:00+08:00",
+    "sunSet": "2024-07-30T19:14:00+08:00",
+    "tempMax": "36",
+    "tempMin": "27",
+    "weatherEnd": "1",
+    "weatherStart": "0",
+    "windDircEnd": "225",
+    "windDircStart": "225",
+    "windSpeedEnd": "0.0",
+    "windSpeedStart": "0.0"
+  },
+  "url": {
+    "weathercn": "",
+    "caiyun": ""
+  },
+  "brandInfo": {
+    "brands": [
+      {
+        "brandId": "caiyun",
+        "logo": "http://f5.market.mi-img.com/download/MiSafe/069835733640846b1b2613a855328d2b6df404343/a.webp",
+        "names": {
+          "zh_TW": "彩雲天氣",
+          "en_US": "彩云天气",
+          "zh_CN": "彩云天气"
+        },
+        "url": ""
+      },
+      {
+        "brandId": "weatherbj",
+        "logo": "",
+        "names": {
+          "zh_TW": "北京气象局",
+          "en_US": "北京气象局",
+          "zh_CN": "北京气象局"
+        },
+        "url": ""
+      }
+    ]
+  },
+  "sourceMaps": {
+    "current": {
+      "feelsLike": "weatherbj(locationKey=101220706)",
+      "weather": "weatherbj(locationKey=101220706)",
+      "temperature": "weatherbj(locationKey=101220706)",
+      "humidity": "weatherbj(locationKey=101220706)",
+      "pressure": "weatherbj(locationKey=101220706)",
+      "windDir": "caiyun(locationKey=101220706)",
+      "windSpeed": "caiyun(locationKey=101220706)",
+      "uvIndex": "caiyun(locationKey=33.637,116.989,locale=zh_CN)"
+    },
+    "indices": {
+      "feelsLikeV1": "weatherbj(locationKey=101220706)",
+      "pressureV1": "weatherbj(locationKey=101220706)",
+      "uvIndexV1": "weatherbj(locationKey=101220706)",
+      "sportsV1": "weatherbj(locationKey=101220706)",
+      "carWashV1": "weatherbj(locationKey=101220706)"
+    },
+    "daily": {
+      "preciProbability": "caiyun(locationKey=33.637,116.989,locale=zh_CN)",
+      "weather": "weatherbj(locationKey=101220706)",
+      "temperature": "weatherbj(locationKey=101220706)",
+      "sunRiseSet": "weatherbj(locationKey=101220706)",
+      "aqi": "caiyun(locationKey=33.637,116.989,locale=zh_CN)",
+      "wind": "caiyun(locationKey=33.637,116.989)"
+    },
+    "clientInfo": {
+      "appVersion": 87,
+      "isLocated": true,
+      "isGlobal": false,
+      "appKey": "weather20151024",
+      "locale": "zh_CN"
+    },
+    "hourly": {
+      "precipitationProbability": "caiyun(locationKey=33.637,116.989,locale=zh_CN)",
+      "weather": "weatherbj(locationKey=101220706)",
+      "temperature": "weatherbj(locationKey=101220706)",
+      "aqi": "caiyun(locationKey=33.637,116.989,locale=zh_CN)",
+      "wind": "caiyun(locationKey=33.637,116.989, latitude=null, longitude=null)",
+      "desc": "caiyun(locationKey=33.637,116.989, latitude=null, longitude=null)"
+    }
+  },
+  "updateTime": 1722426546544,
+  "aqi": {
+    "aqi": "31",
+    "brandInfo": {
+      "brands": [
+        {
+          "brandId": "CNEMC",
+          "logo": "",
+          "names": {
+            "zh_TW": "中國環境監測總站",
+            "en_US": "CNEMC",
+            "zh_CN": "中国环境监测总站"
+          },
+          "url": ""
+        }
+      ]
+    },
+    "co": "0.6",
+    "no2": "6",
+    "o3": "98",
+    "pm10": "30",
+    "pm25": "16",
+    "primary": "",
+    "pubTime": "2024-07-31T19:00:00+08:00",
+    "so2": "7",
+    "src": "中国环境监测总站",
+    "status": 0,
+    "suggest": "空气很好，快呼吸新鲜空气，拥抱大自然吧",
+    "pm25Desc": "PM2.5易携带重金属、微生物等有害物质，对人体健康影响较大",
+    "pm10Desc": "PM10对人的影响要大于其他任何污染物，长期暴露于污染环境可能导致罹患心血管和呼吸道疾病甚至肺癌",
+    "no2Desc": "二氧化氮的主要来源是燃烧过程产生，例如供热、发电以及机动车和船舶的发动机",
+    "so2Desc": "二氧化硫是一种无色气体，当空气中SO2达到一定浓度时，空气中会有刺鼻的气味",
+    "coDesc": "暴露在一氧化碳中可能严重损害心脏和中枢神经系统，也可能令孕妇胎儿产生严重的不良影响",
+    "o3Desc": "空气中过多臭氧可能导致呼吸问题，引发哮喘，降低肺功能并引起肺部疾病，对人类健康影响较大"
+  },
+  "chs": [
+    {
+      "type": "CWA6"
+    }
+  ],
+  "minutely": {
+    "status": 0,
+    "new": "new",
+    "probability": {
+      "maxProbability": "0%",
+      "probabilityDesc": "2小时降水概率",
+      "probabilityDescV2": "2小时内无降水"
+    },
+    "precipitation": {
+      "description": "未来两小时不会下雨，放心出门吧",
+      "firstRainOrSnow": false,
+      "headDescription": "降水预报",
+      "headIconType": "rain_0",
+      "isModify": false,
+      "isRadarHideToast": false,
+      "isRainOrSnow": 2,
+      "isShow": false,
+      "kmNum": 0,
+      "modifyInHour": false,
+      "probability": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "pubTime": "2024-07-31T19:49:06+08:00",
+      "shortDescription": "",
+      "status": 0,
+      "value": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "weather": "1"
+    }
+  }
+}
